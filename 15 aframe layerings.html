@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hyperdrive Particle Scene</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent("random-stars", {
+        init: function () {
+          for (let i = 0; i < 200; i++) {
+            let star = document.createElement("a-sphere");
+            let x = (Math.random() - 0.5) * 50;
+            let y = (Math.random() - 0.5) * 50;
+            let z = (Math.random() - 0.5) * 50;
+            star.setAttribute("position", { x: x, y: y, z: z });
+            star.setAttribute("radius", "0.05");
+            star.setAttribute("color", "#FFF");
+            star.setAttribute("animation", {
+              property: "scale",
+              to: "1.5 1.5 1.5",
+              dir: "alternate",
+              dur: Math.random() * 2000 + 1000,
+              loop: true,
+            });
+            this.el.appendChild(star);
+          }
+        },
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene background="color: #000">
+      <a-entity
+        random-stars
+        animation="property: position; from: 0 0 -20; to: 0 0 20; loop: true; dur: 8000; easing: linear"
+      >
+      </a-entity>
+
+      <a-entity
+        random-stars
+        animation="property: position; from: 0 0 -40; to: 0 0 0; loop: true; dur: 12000; easing: linear"
+      >
+      </a-entity>
+
+      <a-camera position="0 1.6 0">
+        <a-cursor color="#4CC3D9"></a-cursor>
+      </a-camera>
+
+      <a-light type="point" intensity="2" position="0 0 -10"></a-light>
+      <a-sphere position="0 0 -15" radius="2" color="#FDB813" shader="flat">
+        <a-animation
+          attribute="scale"
+          to="1.1 1.1 1.1"
+          dur="2000"
+          direction="alternate"
+          repeat="indefinite"
+        ></a-animation>
+      </a-sphere>
+    </a-scene>
+  </body>
+</html>

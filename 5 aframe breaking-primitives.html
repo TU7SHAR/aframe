@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img src="f4.png" id="f1" />
+      </a-assets>
+      <a-box position="-1 .5 -4"></a-box>
+
+      <a-image src="#f1" position="0 -1.6 -11" scale="12 9 1"></a-image>
+      <a-entity
+        position="1 .5 -4"
+        geometry="primitive: box"
+        material="shader: standard; color=#FF00FF"
+      ></a-entity>
+
+      <a-entity
+        geometry="primitive: cylinder; theta-length: 90 ; theta-start: 135; radius: 0.707; height: 0.833; open-ended:true; "
+        material="shader: flat; color: #FFFFFF; side:double; src:#f1"
+        position="0 -1 0"
+        scale="-10 10 10"
+      ></a-entity>
+    </a-scene>
+  </body>
+</html>

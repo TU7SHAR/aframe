@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- assets -->
+      <a-assets>
+        <img src="cloth.jpg" alt="brick" id="floor" />
+      </a-assets>
+
+      <!-- Ground -->
+      <a-plane
+        color="gray"
+        opacity="0.5"
+        shader="flat"
+        rotation="-90 0 0"
+        scale="5 5 1"
+      ></a-plane>
+
+      <!-- cameras -->
+      <a-entity position="0 0 8">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <!-- box -->
+      <a-box color="#AA0000" position="0 4 0">
+        <a-animation
+          attribute="rotation"
+          to="360 360 360"
+          repeat="indefinite"
+          easing="linear"
+          dur="10000"
+        ></a-animation>
+      </a-box>
+
+      <!-- orbiting boxes -->
+
+      <!-- on x-axis -->
+      <a-entity position="0 5 0">
+        <a-animation
+          attribute="rotation"
+          to="0 -360 0"
+          repeat="indefinite"
+          easing="linear"
+          dur="5000"
+        ></a-animation>
+        <a-box position="2 0 0" color="orange">
+          <a-animation
+            attribute="rotation"
+            to="0 -360 0"
+            repeat="indefinite"
+            easing="linear"
+            dur="5000"
+          ></a-animation
+        ></a-box>
+      </a-entity>
+
+      <!-- for y-axis -->
+      <a-entity position="0 5 0">
+        <a-animation
+          attribute="rotation"
+          to="-360 0 0"
+          repeat="indefinite"
+          dur="5000"
+          easing="linear"
+        >
+        </a-animation>
+        <a-box position="0 2 0" color="gray">
+          <a-animation
+            attribute="rotation"
+            to="-360 0 0"
+            repeat="indefinite"
+            easing="linear"
+            dur="5000"
+          ></a-animation>
+        </a-box>
+      </a-entity>
+
+      <!-- on z-axis -->
+      <a-entity position="0 5 0">
+        <a-animation
+          attribute="rotation"
+          to="0 0 -360"
+          dur="6000"
+          repeat="indefinite"
+          easing="linear"
+        ></a-animation>
+        <a-box position="2 0 0" color="teal"
+          ><a-animation
+            attribute="rotation"
+            to="0 0 -360"
+            dur="6000"
+            repeat="indefinite"
+            easing="linear"
+          ></a-animation
+        ></a-box>
+      </a-entity>
+
+      <a-sphere color="rgba(0,0,0,0)" radius=".5" position="0 1.7 0">
+        <a-animation
+          attribute="material.color"
+          from="rgba(0,0,0,0)"
+          to="rgba(255,255,255,1)"
+          repeat="indefinite"
+          direction="alternate"
+          dur="1500"
+        ></a-animation>
+      </a-sphere>
+
+      <a-cone color="#484848" position="0 0.5 0">
+        <a-animation
+          attribute="material.color"
+          from="white"
+          to="black"
+          repeat="indefinite"
+          direction="alternate"
+          dur="1500"
+        ></a-animation>
+      </a-cone>
+
+      <a-box color="powderblue" position="-2 0.5 0">
+        <a-animation
+          attribute="position"
+          from="2 0.5 2"
+          to="-2 0.5 2"
+          repeat="indefinite"
+          direction="alternate"
+          easing="linear"
+          dur="1000"
+        ></a-animation>
+      </a-box>
+
+      <!-- scaleing operations -->
+      <a-box color="powderblue" position="2 0.5 0">
+        <a-animation
+          attribute="scale"
+          to="0.2 1 5"
+          repeat="indefinite"
+          direction="alternate"
+          easing="linear"
+          dur="1000"
+        ></a-animation>
+      </a-box>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- AFrames Asset managment -->
+      <a-assets>
+        <img id="cloth-decor-1" src="cloth.jpg" />
+        <img id="brick" src="brick.jpg" />
+      </a-assets>
+
+      <a-box
+        color="rgba(55,105,115,1)"
+        scale="-1 1 1"
+        width="4"
+        height="4"
+        depth="4"
+        repeat="1 -1"
+        normal-map="#cloth-decor-1"
+        normal-texture-repeat="1 -1"
+        normal-scale=" 1 1"
+        position="-2.01 1.5 -9.0"
+        side="double"
+        roughness="1w"
+      ></a-box>
+      <a-box
+        width="4"
+        side="double"
+        height="4"
+        depth="4"
+        position="2 1.5 -9"
+        repeat="1 -1"
+        normal-map="#brick"
+        roughness="0.6"
+        scale="-1 1 1"
+        normal-texture-repeat="1 -1"
+        normal-scale="1 1"
+        roughness="1"
+        openended="true"
+      ></a-box>
+
+      <a-sphere
+        material="color: rgba(255,0,255,1)"
+        position="-2.01 2 -9.0"
+        radius=".5"
+      ></a-sphere>
+      <a-sphere
+        material="color: brown"
+        position="2.0 2 -9.0"
+        radius=".5"
+      ></a-sphere>
+    </a-scene>
+  </body>
+</html>

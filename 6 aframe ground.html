@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img src="drish2.jpeg" alt="env1" id="env1" />
+
+        <!-- <img src="env1.jpg" alt="env1" id="env1" /> -->
+        <img src="ground1.jpg" alt="ground1" id="g1" />
+        <img src="ground2.jpg" alt="ground2" id="g2" />
+        <img src="sky.jpg" alt="sky" id="s1" />
+      </a-assets>
+
+      <!-- Sky -->
+      <!-- <a-sky src="#s1" rotation="0 64 0"></a-sky> -->
+      <!-- Ground || Realastic Style
+      <a-plane
+        material="color: #999999; src: #g1; repeat: 5000 5000; normal-map: #g1; normal-texture-repeat: 5000 5000;"
+        rotation="-90 0 0"
+        scale="10000 10000 1"
+      ></a-plane> -->
+
+      <!-- Ground || Cartoonish Style
+      <a-plane
+        material="color: brown; shader: flat;"
+        rotation="-90 0 0"
+        scale="10000 10000 1"
+      ></a-plane> -->
+      <a-sky src="#env1" rotation="0 0 0"></a-sky>
+    </a-scene>
+  </body>
+</html>

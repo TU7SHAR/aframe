@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- assets -->
+      <a-assets>
+        <img src="cloth.jpg" alt="brick" id="floor" />
+      </a-assets>
+
+      <!-- Ground -->
+      <a-plane
+        color="gray"
+        opacity="0.5"
+        shader="flat"
+        rotation="-90 0 0"
+        scale="5 5 1"
+      ></a-plane>
+
+      <!-- cameras -->
+      <a-entity position="0 0 8">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <!-- moving boxes -->
+      <!-- basic easing functions -->
+      <!-- ease, ease-in, ease-in-out -->
+      <a-box color="gray" position="0 2 0">
+        <a-animation
+          attribute="position"
+          from="0 20 0"
+          to="0 0.1 0"
+          repeat="indefinite"
+          direction="alternate"
+          easing="linear"
+          dur="1000"
+        ></a-animation>
+      </a-box>
+
+      <a-box color="gray" position="-2 0 0">
+        <a-animation
+          attribute="position"
+          from="0 20 0"
+          to="0 0.1 0"
+          repeat="indefinite"
+          direction="alternate"
+          easing="linear"
+          dur="1000"
+        ></a-animation>
+      </a-box>
+    </a-scene>
+  </body>
+</html>

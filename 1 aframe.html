@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box
+        color="rgba(255,100,100,1)"
+        width="8"
+        height="4.5"
+        depth=".2"
+        position="0 3 -7"
+      >
+        <a-circle
+          color="rgba(100,250,50,1)"
+          side="double"
+          position="2 0 0.11"
+        ></a-circle>
+      </a-box>
+      <a-circle color="yellow" position="-2 3 -6.89" side="double"></a-circle>
+
+      <a-cylinder
+        color="rgba(200,100,100,1)"
+        height="7"
+        raidus="3"
+        segment-radial="6"
+        open-ended="true"
+        side="double"
+      ></a-cylinder>
+    </a-scene>
+  </body>
+</html>

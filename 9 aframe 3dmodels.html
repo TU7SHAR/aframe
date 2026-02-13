@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="ferrari" src="/New folder/scene.gltf"></a-asset-item>
+        <a-asset-item id="village" src="scene.gltf"></a-asset-item>
+        <img id="s1" src="sky.jpg" alt="night" />
+      </a-assets>
+      <a-sky src="#s1"></a-sky>
+
+      <!-- camera -->
+      <a-entity position="0 0 0">
+        <a-camera></a-camera>
+      </a-entity>
+      <!-- castle -->
+      <a-entity
+        gltf-model="#village"
+        position="0 0 0"
+        scale="30 30 30"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#ferrari"
+        position="5 0 -10"
+        scale="0.6 0.6 0.6"
+      ></a-entity>
+    </a-scene>
+  </body>
+</html>
